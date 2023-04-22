@@ -1,0 +1,66 @@
+@use "../variables/fonts";
+@use "../variables/colors";
+
+
+.header-section {
+    width: 100%;
+    padding: 2.5rem 0;
+    .header-section__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .header-section__logo img {
+            width: 100%;
+            height: 2rem;
+        }
+        .header-section__nav {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: fonts.$font-weight-secondary-extra-bold;
+            ul {
+                list-style-type: none;
+                li {
+                    display: inline-block;
+                    a {
+                    color: colors.$color-font;
+                    text-decoration: none;
+                    padding: 2px;
+                    margin: 0 7px;
+                    line-height: 1.4;
+                    }
+                    .active::after{
+                        content: "";
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        border-radius: 50%;
+                        position: absolute;
+                        margin-left: 3px;
+                        background-color: #ffb469;
+                        transition: background-color 0.3s ease;
+                    }
+                    :after {
+                        content: "";
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        border-radius: 50%;
+                        position: absolute;
+                        margin-left: 3px;
+                        background-color: transparent;
+                        transition: background-color 0.3s ease;
+                    }
+                    :hover:not(.active):after {
+                        background-color: grey;
+                    }
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                        fill: colors.$color-font;
+                        margin: 0 0 -3px 5px;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+@use "./variables/colors";
+@use "./variables/fonts";
+
+@use "./components/header";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    height: 100%;
+    font-family: fonts.$font-family-secondary;
+    font-size: 1.18rem;
+    font-weight: fonts.$font-weight-secondary-regular;
+    line-height: 1.5;
+    word-wrap: break-word;
+    word-break: break-word;
+    color: colors.$color-font;
+}
+
+.global-container {
+    padding: 0 4.6rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: colors.$color-bg-body;
+}
