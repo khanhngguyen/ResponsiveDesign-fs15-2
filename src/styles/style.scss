@@ -42,4 +42,8 @@ body {
             grid-area: pinned;
         }
     }
+    transition: transform 0.2s ease-in-out;
+    :hover {
+        transform: translateY(-3px);
+    }
 }

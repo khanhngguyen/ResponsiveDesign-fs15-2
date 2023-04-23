@@ -243,9 +243,13 @@ body {
   gap: 1rem;
   margin: 2rem 0 3.25rem 0;
   grid-template-areas: "pinned card1 card2" "pinned card3 card4";
+  transition: transform 0.2s ease-in-out;
 }
 .pinned-section .pinned-section__card.pinned {
   grid-area: pinned;
+}
+.pinned-section :hover {
+  transform: translateY(-3px);
 }
 
 /*# sourceMappingURL=style.css.map */
