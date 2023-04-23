@@ -2,6 +2,7 @@
 @use "./variables/fonts";
 
 @use "./components/header";
+@use "./components/pinned-card";
 
 * {
   box-sizing: border-box;
@@ -21,9 +22,24 @@ body {
 }
 
 .global-container {
-    padding: 0 4.6rem;
+    padding: 0 4rem;
     display: flex;
     flex-direction: column;
     height: 100%;
     background-color: colors.$color-bg-body;
+}
+
+.pinned-section {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0 3.25rem 0;
+    grid-template-areas:
+    "pinned card1 card2"
+    "pinned card3 card4";
+    .pinned-section__card {
+        &.pinned {
+            grid-area: pinned;
+        }
+    }
 }

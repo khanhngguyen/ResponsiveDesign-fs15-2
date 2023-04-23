@@ -1,0 +1,94 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+@mixin background($color, $opacity, $img-link) {
+  background-color: $color;
+  background-image: url($img-link);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: $opacity;
+  background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 1rem;
+}
+
+.pinned-section__card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 1rem;
+    min-height: 12rem;
+    position: relative;
+    padding: 2rem;
+    .pinned-section__card__pinned {
+        width: fit-content;
+        font-size: 0.5rem;
+        font-weight: fonts.$font-weight-secondary-extra-bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        word-break: keep-all;
+        background-color: colors.$color-font-loop-and-elements-two;
+        color: colors.$color-font-loop-and-elements-one;
+        padding: 2px 9px;
+        border-radius: 3rem;
+        position: relative;
+    }
+    .pinned-section__card__content {
+        position: relative;
+        p {
+            font-size: 0.75rem;
+            padding-bottom: 0.4rem;
+        }
+        h3 {
+            font-family: fonts.$font-family-primary;
+            font-size: 1.75rem;
+            font-weight: fonts.$font-weight-primary-bold;
+            letter-spacing: 1.3px;
+        }
+    }
+    @for $i from 1 to 5 
+        {
+            &.card#{$i} 
+            {
+                grid-area: card+$i;
+                h3 {
+                    font-size: 1.25em;
+                }
+            }
+        }
+    @each $i in 2, 4 
+        {
+        &.card#{$i}
+            {
+            .pinned-section__card__pinned {
+                background-color: colors.$color-font-loop-and-elements-one;
+                color: colors.$color-font-loop-and-elements-two;
+            }
+            .pinned-section__card__content {
+                color: colors.$color-font-loop-and-elements-one;
+            }
+            }
+        }
+    &.pinned::before {
+        @include background(colors.$color-font-loop-and-elements-two, 0.8, "https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ-link");
+    }
+    &.card1::before {
+        @include background(blue, 0.5, "https://images.unsplash.com/photo-1566764581662-6cd06d381aef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ")
+    }
+    &.card2::before {
+        @include background(colors.$color-apricot, 1, "#")
+    }
+    &.card3::before {
+        @include background(colors.$color-eggplant, 0.6, "https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ")
+    }
+    &.card4::before {
+        @include background(colors.$color-cerise, 1, "https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ")
+    }
+}
