@@ -8,7 +8,6 @@
     margin: 5rem auto;
     text-align: center;
     .subscribe__form {
-        width: 100%;
         max-width: 800px;
         padding: 70px 50px;
         h3 {
@@ -28,8 +27,9 @@
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: 0.15rem;
+            max-width: max-content;
             animation: 
-                typing 3.5s steps(30, end) alternate infinite,
+                typing 3.5s steps(40) alternate infinite,
                 blink-caret .75s step-end infinite;
         }
         input {
@@ -66,13 +66,18 @@
             background-color: colors.$color-elements-one;
             border-radius: 0.8rem;
             border: none;
+            &:hover {
+                color: colors.$color-font-loop-and-elements-one;
+                background-color: colors.$color-apricot;
+                padding: 2rem 2.5rem;
+            }
         }
     }
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 105% }
+  to { width: 100% }
 }
 
 @keyframes blink-caret {

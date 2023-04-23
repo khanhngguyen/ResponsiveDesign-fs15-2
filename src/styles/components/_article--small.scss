@@ -27,6 +27,7 @@
     }
     .article--small__post {
         @extend %card;
+        justify-content: flex-start;
         width: 20rem;
         padding: 2rem;
         margin: 0.7rem;
@@ -137,4 +138,8 @@
     width: calc(80% - 1rem);
     margin: 0.8rem auto;
     cursor: pointer;
+    &:hover {
+        color: colors.$color-font-loop-and-elements-one;
+        background-color: colors.$color-apricot;
+    }
 }

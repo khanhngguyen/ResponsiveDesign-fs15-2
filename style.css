@@ -348,6 +348,7 @@
   transform: scale(1.05);
 }
 .article--small__wrapper .article--small__post {
+  justify-content: flex-start;
   width: 20rem;
   padding: 2rem;
   margin: 0.7rem;
@@ -523,6 +524,10 @@
   margin: 0.8rem auto;
   cursor: pointer;
 }
+.article--small__button--load:hover {
+  color: #333350;
+  background-color: #ffb469;
+}
 
 .subscribe__wrapper {
   display: flex;
@@ -532,7 +537,6 @@
   text-align: center;
 }
 .subscribe__wrapper .subscribe__form {
-  width: 100%;
   max-width: 800px;
   padding: 70px 50px;
 }
@@ -553,7 +557,8 @@
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15rem;
-  animation: typing 3.5s steps(30, end) alternate infinite, blink-caret 0.75s step-end infinite;
+  max-width: max-content;
+  animation: typing 3.5s steps(40) alternate infinite, blink-caret 0.75s step-end infinite;
 }
 .subscribe__wrapper .subscribe__form input {
   display: block;
@@ -590,13 +595,18 @@
   border-radius: 0.8rem;
   border: none;
 }
+.subscribe__wrapper .subscribe__form button:hover {
+  color: #333350;
+  background-color: #ffb469;
+  padding: 2rem 2.5rem;
+}
 
 @keyframes typing {
   from {
     width: 0;
   }
   to {
-    width: 105%;
+    width: 100%;
   }
 }
 @keyframes blink-caret {
@@ -607,6 +617,66 @@
     border-color: orange;
   }
 }
+footer .footer__wrapper {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer__wrapper nav {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+footer .footer__wrapper nav ul li {
+  display: inline-block;
+}
+footer .footer__wrapper nav ul li a {
+  color: #ebebeb;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 2px;
+  margin: 0 4px;
+}
+footer .footer__wrapper nav ul li a.active::after {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 3px;
+  background-color: #ffb469;
+  transition: background-color 0.3s ease;
+}
+footer .footer__wrapper nav ul li :after {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+footer .footer__wrapper nav ul li :hover:not(.active):after {
+  background-color: grey;
+}
+footer .footer__wrapper .footer__icons {
+  display: block;
+}
+footer .footer__copyright {
+  font-size: 0.6rem;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  padding: 0 2rem 2rem 6px;
+  color: #ebebeb;
+  opacity: 0.8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
