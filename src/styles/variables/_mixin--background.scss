@@ -1,0 +1,15 @@
+@mixin background($color, $opacity, $img-link) {
+  background-color: $color;
+  background-image: url($img-link);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: $opacity;
+  background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 1rem;
+}

@@ -1,0 +1,17 @@
+@use "../variables/fonts";
+@use "../variables/colors";
+
+%button {
+    width: fit-content;
+    font-weight: fonts.$font-weight-secondary-extra-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    word-break: keep-all;
+    background-color: colors.$color-font-loop-and-elements-two;
+    color: colors.$color-font-loop-and-elements-one;
+    padding: 2px 9px;
+    border-radius: 3rem;
+    position: relative;
+    font-size: 0.5rem;
+}

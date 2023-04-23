@@ -61,19 +61,8 @@
   margin: 0 0 -3px 5px;
 }
 
-.pinned-section__card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-radius: 1rem;
-  min-height: 12rem;
-  position: relative;
-  padding: 2rem;
-}
-.pinned-section__card .pinned-section__card__pinned {
+.article--big__post .article--big__post__button, .article--big__post:nth-of-type(2) .article--big__post__button, .pinned-section__card .pinned-section__card__pinned {
   width: fit-content;
-  font-size: 0.5rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -84,43 +73,57 @@
   padding: 2px 9px;
   border-radius: 3rem;
   position: relative;
+  font-size: 0.5rem;
 }
-.pinned-section__card .pinned-section__card__content {
-  position: relative;
-}
-.pinned-section__card .pinned-section__card__content p {
-  font-size: 0.75rem;
-  padding-bottom: 0.4rem;
-}
-.pinned-section__card .pinned-section__card__content h3 {
+
+.article--big__post .article--big__post__title, .pinned-section__card .pinned-section__card__content h3 {
   font-family: "Corben", serif;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: 1.3px;
+  position: relative;
+}
+
+.article--big__post .article--big__post__subtext, .pinned-section__card .pinned-section__card__content p {
+  font-size: 0.75rem;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.pinned-section__card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 1rem;
+  min-height: 12rem;
+  position: relative;
+  padding: 2rem;
+  cursor: pointer;
 }
 .pinned-section__card.card1 {
   grid-area: card1;
 }
 .pinned-section__card.card1 h3 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 .pinned-section__card.card2 {
   grid-area: card2;
 }
 .pinned-section__card.card2 h3 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 .pinned-section__card.card3 {
   grid-area: card3;
 }
 .pinned-section__card.card3 h3 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 .pinned-section__card.card4 {
   grid-area: card4;
 }
 .pinned-section__card.card4 h3 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 .pinned-section__card.card2 .pinned-section__card__pinned {
   background-color: #333350;
@@ -212,6 +215,126 @@
   border-radius: 1rem;
 }
 
+.article--big__post {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 1rem;
+  min-height: 30rem;
+  position: relative;
+  padding: 2rem 15%;
+  word-break: keep-all;
+  overflow: hidden;
+  margin: 3rem auto;
+  cursor: pointer;
+}
+.article--big__post .article--big__post__button {
+  font-size: 0.6rem;
+  margin: 5px;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  color: #ebebeb;
+}
+.article--big__post .article--big__post__button:hover {
+  background-color: #ebebeb;
+  color: #333350;
+}
+.article--big__post .article--big__post__title {
+  font-size: 2.8rem;
+  margin: 1.5rem auto;
+}
+.article--big__post .article--big__post__subtext {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 85%;
+}
+.article--big__post svg {
+  fill: #ebebeb;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  fill: transparent;
+}
+.article--big__post :hover svg {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-property: margin-left, fill;
+  fill: #ebebeb;
+  margin-left: 0;
+}
+.article--big__post:nth-of-type(2) .article--big__post__button {
+  font-size: 0.6rem;
+  background-color: transparent;
+  color: #333350;
+  border: 1px solid #333350;
+}
+.article--big__post:nth-of-type(2) .article--big__post__button:hover {
+  background-color: #333350;
+  color: #ebebeb;
+}
+.article--big__post:nth-of-type(2) .article--big__post__title {
+  color: #333350;
+}
+.article--big__post:nth-of-type(2) .article--big__post__subtext {
+  color: #333350;
+}
+.article--big__post:nth-of-type(2) :hover svg {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-property: margin-left, fill;
+  fill: #333350;
+  margin-left: 0;
+}
+.article--big__post:nth-of-type(1)::before {
+  background-color: #ebebeb;
+  background-image: url("https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 1rem;
+}
+.article--big__post:nth-of-type(2)::before {
+  background-color: #fed672;
+  background-image: url("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 1rem;
+  background-blend-mode: soft-light;
+}
+.article--big__post:nth-of-type(3)::before {
+  background-color: #ebebeb;
+  background-image: url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 1rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -241,7 +364,7 @@ body {
   width: 100%;
   display: grid;
   gap: 1rem;
-  margin: 2rem 0 3.25rem 0;
+  margin: 2rem 0;
   grid-template-areas: "pinned card1 card2" "pinned card3 card4";
   transition: transform 0.2s ease-in-out;
 }
@@ -250,6 +373,17 @@ body {
 }
 .pinned-section :hover {
   transform: translateY(-3px);
+}
+
+.article--big {
+  width: 100%;
+  display: flexbox;
+  flex-direction: column;
+  padding: 0 3rem;
+  transition: transform 0.5s ease-in-out;
+}
+.article--big :hover::before {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

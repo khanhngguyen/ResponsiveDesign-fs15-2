@@ -3,6 +3,7 @@
 
 @use "./components/header";
 @use "./components/pinned-card";
+@use "./components/article--big";
 
 * {
   box-sizing: border-box;
@@ -33,7 +34,7 @@ body {
     width: 100%;
     display: grid;
     gap: 1rem;
-    margin: 2rem 0 3.25rem 0;
+    margin: 2rem 0;
     grid-template-areas:
     "pinned card1 card2"
     "pinned card3 card4";
@@ -45,5 +46,16 @@ body {
     transition: transform 0.2s ease-in-out;
     :hover {
         transform: translateY(-3px);
+    }
+}
+
+.article--big {
+    width: 100%;
+    display: flexbox;
+    flex-direction: column;
+    padding: 0 3rem;
+    transition: transform 0.5s ease-in-out;
+    :hover::before {
+        transform: scale(1.1);
     }
 }

@@ -1,0 +1,100 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use "../variables/mixin--background";
+@use "../components/button";
+@use "../components/title";
+@use "../components/subtext";
+
+.article--big__post {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 1rem;
+    min-height: 30rem;
+    position: relative;
+    padding: 2rem 15%;
+    word-break: keep-all;
+    overflow: hidden;
+    margin: 3rem auto;
+    cursor: pointer;
+    .article--big__post__button {
+        @extend %button;
+        font-size: 0.6rem;
+        margin: 5px;
+        background-color: transparent;
+        border: 1px solid colors.$color-font-loop-and-elements-two;
+        color: colors.$color-font-loop-and-elements-two;
+        &:hover {
+            background-color: colors.$color-font-loop-and-elements-two;
+            color: colors.$color-font-loop-and-elements-one;
+        }
+    }
+    .article--big__post__title {
+        @extend %title;
+        font-size: 2.8rem;
+        margin: 1.5rem auto;
+    }
+    .article--big__post__subtext {
+        @extend %subtext;
+        font-size: 1rem;
+        font-weight: fonts.$font-weight-primary-bold;
+        width: 85%;
+    }
+    svg {
+        fill: colors.$color-font-loop-and-elements-two;
+        width: 2rem;
+        height: 2rem;
+        margin-left: -1rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        fill: transparent;
+    }
+    :hover {
+        svg {
+            transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            transition-property: margin-left, fill;
+            fill: colors.$color-font-loop-and-elements-two;
+            margin-left: 0;
+        }
+    }
+    &:nth-of-type(2) {
+        .article--big__post__button {
+            @extend %button;
+            font-size: 0.6rem;
+            background-color: transparent;
+            color: colors.$color-font-loop-and-elements-one;
+            border: 1px solid colors.$color-font-loop-and-elements-one;
+            &:hover {
+            background-color: colors.$color-font-loop-and-elements-one;
+            color: colors.$color-font-loop-and-elements-two;
+        }
+        }
+        .article--big__post__title {
+            color: colors.$color-font-loop-and-elements-one;
+        }
+        .article--big__post__subtext {
+            color: colors.$color-font-loop-and-elements-one;
+        }
+        :hover {
+        svg {
+            transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            transition-property: margin-left, fill;
+            fill: colors.$color-font-loop-and-elements-one;
+            margin-left: 0;
+        }
+    }
+    }
+    &:nth-of-type(1)::before {
+        @include mixin--background.background(colors.$color-font-loop-and-elements-two, 0.6, "https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+    }
+    &:nth-of-type(2)::before {
+        @include mixin--background.background(colors.$color-amber, 0.9, "https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+        background-blend-mode: soft-light;
+    }
+     &:nth-of-type(3)::before {
+        @include mixin--background.background(colors.$color-font-loop-and-elements-two, 0.6, "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+    }
+}

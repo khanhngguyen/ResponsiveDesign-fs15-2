@@ -1,0 +1,10 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+%title {
+    font-family: fonts.$font-family-primary;
+    font-size: 1.75rem;
+    font-weight: fonts.$font-weight-primary-bold;
+    letter-spacing: 1.3px;
+    position: relative;
+}
