@@ -1,0 +1,81 @@
+@use "../variables/fonts";
+@use "../variables/colors";
+
+.subscribe__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem auto;
+    text-align: center;
+    .subscribe__form {
+        width: 100%;
+        max-width: 800px;
+        padding: 70px 50px;
+        h3 {
+            font-size: 2.3rem;
+            font-family: fonts.$font-family-primary;
+            font-weight: fonts.$font-weight-primary-bold;
+            line-height: 1.45;
+            padding: 1rem;
+            max-width: 40rem;
+        }
+        label {
+            display: inline-block;
+            font: fonts.$font-family-secondary;
+            font-weight: fonts.$font-weight-primary-bold;
+            overflow: hidden;
+            border-right: 2.5px solid colors.$color-apricot;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15rem;
+            animation: 
+                typing 3.5s steps(30, end) alternate infinite,
+                blink-caret .75s step-end infinite;
+        }
+        input {
+            display: block;
+            font-size: 1.12rem;
+            font-family: fonts.$font-family-secondary;
+            font-weight: fonts.$font-weight-secondary-bold;
+            color: colors.$color-elements-two;
+            background-color: transparent;
+            width: 65%;
+            height: 1.8rem;
+            text-align: center;
+            word-break: normal;
+            margin: 20px auto 30px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid colors.$color-elements-three;
+            box-shadow: none;
+            outline: none;
+            &::placeholder {
+                opacity: 0.6;
+            }
+        }
+        button {
+            font-size: 0.75rem;
+            font-weight: fonts.$font-weight-secondary-extra-bold;
+            height: auto;
+            margin: 1.5rem 0 0 0;
+            padding: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: colors.$color-font;
+            background-color: colors.$color-elements-one;
+            border-radius: 0.8rem;
+            border: none;
+        }
+    }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 105% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
