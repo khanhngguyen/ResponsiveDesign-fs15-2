@@ -4,20 +4,13 @@
 @use "../components/button";
 @use "../components/title";
 @use "../components/subtext";
+@use "../components/card";
 
 .article--big__post {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 1rem;
-    min-height: 30rem;
-    position: relative;
+    @extend %card;
     padding: 2rem 15%;
-    word-break: keep-all;
-    overflow: hidden;
     margin: 3rem auto;
-    cursor: pointer;
+    min-height: 30rem;
     .article--big__post__button {
         @extend %button;
         font-size: 0.6rem;
@@ -42,7 +35,6 @@
         width: 85%;
     }
     svg {
-        fill: colors.$color-font-loop-and-elements-two;
         width: 2rem;
         height: 2rem;
         margin-left: -1rem;
@@ -79,11 +71,7 @@
         }
         :hover {
         svg {
-            transition-timing-function: ease-in-out;
-            transition-duration: .2s;
-            transition-property: margin-left, fill;
             fill: colors.$color-font-loop-and-elements-one;
-            margin-left: 0;
         }
     }
     }

@@ -1,0 +1,11 @@
+%card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 1rem;
+    position: relative;
+    word-break: keep-all;
+    overflow: hidden;
+    cursor: pointer;
+}

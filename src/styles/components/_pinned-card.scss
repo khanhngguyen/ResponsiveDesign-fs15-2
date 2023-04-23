@@ -4,17 +4,14 @@
 @use "../components/button";
 @use "../components/title";
 @use "../components/subtext";
+@use "../components/card";
 
 .pinned-section__card {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    @extend %card;
     justify-content: space-between;
-    border-radius: 1rem;
-    min-height: 12rem;
     position: relative;
     padding: 2rem;
-    cursor: pointer;
+    min-height: 12rem;
     .pinned-section__card__pinned {
         @extend %button;
     }

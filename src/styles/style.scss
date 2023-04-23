@@ -4,11 +4,13 @@
 @use "./components/header";
 @use "./components/pinned-card";
 @use "./components/article--big";
+@use "./components/article--small";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -59,3 +61,4 @@ body {
         transform: scale(1.1);
     }
 }
+
