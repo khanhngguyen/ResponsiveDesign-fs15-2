@@ -664,7 +664,25 @@ footer .footer__wrapper nav ul li :hover:not(.active):after {
   background-color: grey;
 }
 footer .footer__wrapper .footer__icons {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .footer__wrapper .footer__icons a {
+  text-decoration: none;
+  color: #ebebeb;
+  background-color: transparent;
+  line-height: 1;
+  margin: 0 0 0 2rem;
+  padding: 2px 0;
+}
+footer .footer__wrapper .footer__icons a svg {
+  fill: #ebebeb;
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: fill 0.2s ease;
+}
+footer .footer__wrapper .footer__icons a svg :hover {
+  fill: #ffb469;
 }
 footer .footer__copyright {
   font-size: 0.6rem;

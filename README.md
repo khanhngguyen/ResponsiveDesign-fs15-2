@@ -16,4 +16,14 @@ Font family and text content can be modified as your preferences.
 The web page does not need to be fully responsive, but at least you should
 have responsive scaling for Flexbox and Grid system.
 
+## Result
+[Demo available here]()
 
+## Project structure
+![project structure](./structure.png)
+
+## What have been learned & used in this project
+- Sass for styling
+    - modules, variables, mixins, extend
+- Flexbox & Grid system for positioning elements
+- Basic CSS transitions & animations to create effects
