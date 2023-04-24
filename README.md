@@ -17,7 +17,7 @@ The web page does not need to be fully responsive, but at least you should
 have responsive scaling for Flexbox and Grid system.
 
 ## Result
-[Demo available here]()
+[Demo available here](https://khanhngguyen.github.io/fs15_2-responsive-design/)
 
 ## Project structure
 ![project structure](./structure.png)
